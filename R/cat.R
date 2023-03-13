@@ -77,7 +77,7 @@ quartorsv_cat_pandoc_fig <- function(path,
   # label
   if (!is.null(label)) {
     txt_squiggly_lbl <- paste0(
-      "#fig-", gsub("^#fig\\-", "", label), " "
+      "#fig-", gsub("^#fig\\-|^fig\\-", "", label), " "
     )
   } else {
     txt_squiggly_lbl <- ""
