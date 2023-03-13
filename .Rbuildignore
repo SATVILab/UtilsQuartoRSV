@@ -3,3 +3,4 @@
 ^\.github$
 ^SCRATCH\.R$
 ^README\.html$
+^codecov\.yml$
