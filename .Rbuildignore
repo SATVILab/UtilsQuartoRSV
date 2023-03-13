@@ -2,3 +2,4 @@
 ^README\.Rmd$
 ^\.github$
 ^SCRATCH\.R$
+^README\.html$

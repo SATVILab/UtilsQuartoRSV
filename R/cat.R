@@ -22,7 +22,7 @@
 #'   path = "path/to/fig.png",
 #'   cap = "Incredible hist() plot",
 #'   label = "hist-plot",
-#'   args = "width=50%"
+#'   args = "width=50%",
 #'   force_exists = FALSE
 #' )
 #'
