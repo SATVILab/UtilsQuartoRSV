@@ -1,0 +1,32 @@
+---
+title: "intro"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{intro}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(UtilsQuartoRSV)
+```
+
+### Pandoc syntax for including figures, tables and other elements
+
+```{r }
+#| label: quartorsv_cat_pandoc_fig
+quartorsv_cat_pandoc_fig(
+  path = "path/to/fig.png",
+  cap = "Incredible hist() plot",
+  label = "hist-plot",
+  args = "width=50%",
+  force_exists = FALSE
+)
+```
