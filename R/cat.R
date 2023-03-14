@@ -3,13 +3,13 @@
 #' @description Cat pandoc command to include a figure
 #'
 #' @param path character. Path to the figure.
-#' @param cap character. Caption of the figure.
+#' @param caption character. Caption of the figure.
 #' @param label character. Label of the figure.
 #' Need not supply `#fig-` prefix (but it
 #' will not be repeated if you do).
 #' @param args character. Additional arguments to be passed to pandoc.
 #' @param force_cross_ref logical.
-#' If `TRUE`, then will throw an error if either `cap`
+#' If `TRUE`, then will throw an error if either `caption`
 #' or `label` are `NULL` as these are both required for
 #' cross-referenceable figures in `quarto`.
 #' Default is `TRUE`.
@@ -20,7 +20,7 @@
 #' @examples
 #' quartorsv_cat_pandoc_fig(
 #'   path = "path/to/fig.png",
-#'   cap = "Incredible hist() plot",
+#'   caption = "Incredible hist() plot",
 #'   label = "hist-plot",
 #'   args = "width=50%",
 #'   force_exists = FALSE
@@ -28,7 +28,7 @@
 #'
 #' @export
 quartorsv_cat_pandoc_fig <- function(path,
-                                     cap = NULL,
+                                     caption = NULL,
                                      label = NULL,
                                      args = NULL,
                                      force_cross_ref = TRUE,
@@ -40,9 +40,9 @@ quartorsv_cat_pandoc_fig <- function(path,
   if (!is.character(path)) {
     stop("`path` must be a character vector")
   }
-  if (!is.null(cap)) {
-    if (!is.character(cap)) {
-      stop("`cap` must be a character vector")
+  if (!is.null(caption)) {
+    if (!is.character(caption)) {
+      stop("`caption` must be a character vector")
     }
   }
   if (!is.null(label)) {
@@ -63,8 +63,8 @@ quartorsv_cat_pandoc_fig <- function(path,
 
   # cross-referenceable
   if (force_cross_ref) {
-    if (is.null(cap)) {
-      stop("Caption cannot be NULL if force_cross_ref is TRUE")
+    if (is.null(caption)) {
+      stop("captiontion cannot be NULL if force_cross_ref is TRUE")
     }
     if (is.null(label)) {
       stop("Label cannot be NULL if force_cross_ref is TRUE")
@@ -98,7 +98,7 @@ quartorsv_cat_pandoc_fig <- function(path,
   # final cat
   # ----------------
   txt_out <- paste0(
-    "![", cap, "](", path, ")", txt_squiggly
+    "![", caption, "](", path, ")", txt_squiggly
   )
   if (Sys.getenv("QUARTORSV_TESTING") != "TRUE") {
     cat(paste0(txt_out, "\n"))

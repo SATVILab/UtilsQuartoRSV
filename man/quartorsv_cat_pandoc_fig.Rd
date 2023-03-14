@@ -6,7 +6,7 @@
 \usage{
 quartorsv_cat_pandoc_fig(
   path,
-  cap = NULL,
+  caption = NULL,
   label = NULL,
   args = NULL,
   force_cross_ref = TRUE,
@@ -16,7 +16,7 @@ quartorsv_cat_pandoc_fig(
 \arguments{
 \item{path}{character. Path to the figure.}
 
-\item{cap}{character. Caption of the figure.}
+\item{caption}{character. Caption of the figure.}
 
 \item{label}{character. Label of the figure.
 Need not supply \verb{#fig-} prefix (but it
@@ -25,7 +25,7 @@ will not be repeated if you do).}
 \item{args}{character. Additional arguments to be passed to pandoc.}
 
 \item{force_cross_ref}{logical.
-If \code{TRUE}, then will throw an error if either \code{cap}
+If \code{TRUE}, then will throw an error if either \code{caption}
 or \code{label} are \code{NULL} as these are both required for
 cross-referenceable figures in \code{quarto}.
 Default is \code{TRUE}.}
@@ -40,7 +40,7 @@ Cat pandoc command to include a figure
 \examples{
 quartorsv_cat_pandoc_fig(
   path = "path/to/fig.png",
-  cap = "Incredible hist() plot",
+  caption = "Incredible hist() plot",
   label = "hist-plot",
   args = "width=50\%",
   force_exists = FALSE
